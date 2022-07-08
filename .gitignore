@@ -8,7 +8,7 @@ node_modules/
 dist/
 
 # Config Files
-config/properties.js
+.env
 
 # Log files
 *.log
