@@ -1,0 +1,22 @@
+{
+  "name": "back_feednews",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chsanleo/Back_FeedNews.git"
+  },
+  "author": "Christian Sanchez Leon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chsanleo/Back_FeedNews/issues"
+  },
+  "homepage": "https://github.com/chsanleo/Back_FeedNews#readme",
+  "dependencies": {
+    "express": "4.18.1"
+  }
+}
