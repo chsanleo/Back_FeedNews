@@ -26,6 +26,12 @@ const FeedService = {
             return await _feedRespository.update(_id,feed);
         } catch (error) { throw Error ('Update Feed ' + error.message);}
     },
+    async delete(_id){
+        try {
+            Validations.isValidId(_id);
+            return await _feedRespository.delete(_id);
+        } catch (error) { throw Error ('Delete Feed ' + error.message);}
+    }
 };
 
 module.exports = FeedService;
