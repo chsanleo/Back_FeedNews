@@ -1,4 +1,4 @@
-const { Feed } = require('../database/models/Feed.js');
+const Feed = require('../database/models/Feed.js');
 
 const feedRepository = {
     async create (feed){ return await Feed.create(feed); }, 
