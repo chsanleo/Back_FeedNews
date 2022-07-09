@@ -17,6 +17,7 @@ dbconnect();
 const healthcheck = require('./routers/healthcheck.js');
 const swaggerRouter = require('./routers/swaggerRouter.js');
 const feedRouter = require('./routers/feedRouter.js');
+const feedTodayRouter = require('./routers/feedToday.js');
 
 
 app.use(cors());
@@ -26,6 +27,7 @@ app.use(express.json());
 app.use('/', healthcheck);
 app.use('/', swaggerRouter)
 app.use('/feed', feedRouter);
+app.use('/feed', feedTodayRouter);
 
 
 let port = process.env.PORT;
