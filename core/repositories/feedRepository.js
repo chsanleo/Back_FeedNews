@@ -8,6 +8,7 @@ const feedRepository = {
     }, 
     async get (_id) { return await Feed.findOne({ _id: _id, deleteAt: null }); },
     async getAll () { return Feed.find({ deleteAt: null }); },
+    async getAllByDate(date) { return Feed.find({ createAt: {$regex: date} });},
     async update (_id, feed) {
         feed.updateAt = Utils.dateNowSQL();
         Feed.updateOne({ _id: _id }), feed, { upsert:true } ;
