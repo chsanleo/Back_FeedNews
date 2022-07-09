@@ -8,6 +8,12 @@ const FeedService = {
             return await _feedRespository.create(feed);
         } catch (error) { throw Error('Create Feed -- ' + error.message); }
     },
+    async get(_id) {
+        try {
+            Validations.isValidId(_id);
+            return await _feedRespository.get(_id);
+        } catch (error) { throw Error ('Get Feed ' + error.message); }
+    },
 };
 
 module.exports = FeedService;
