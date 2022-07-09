@@ -4,7 +4,8 @@ const Utils = {
     },
     isInt(value) { return !isNaN(value) && !isNaN(parseInt(value, 10)); },
     isFloat(value) { return Number(value) === value && value % 1 !== 0; },
-    stringEmpty() { return ''; }
+    stringEmpty() { return ''; },
+    dateNowSQL() { return new Date().toISOString().slice(0, 19).replace('T', ' '); }
 };
 
 module.exports = Utils;
