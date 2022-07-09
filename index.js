@@ -14,6 +14,7 @@ const dbconnect = require('./core/database/config/mongoDb.js');
 dbconnect();
 
 
+const healthcheck = require('./routers/healthcheck.js');
 const feedRouter = require('./routers/feedRouter.js');
 
 
@@ -21,7 +22,7 @@ app.use(cors());
 app.use(express.json());
 
 
-//#region 
+app.use('/', healthcheck);
 app.use('/feed', feedRouter);
 
 
