@@ -13,6 +13,11 @@ app.use(log4js.connectLogger(log4js.getLogger("http"), { level: 'auto' }));
 //#region Config
 require('dotenv').config();
 
+//#region Load_DB
+const dbconnect = require('./core/database/config/mongoDb.js');
+dbconnect();
+//#endregion
+
 app.use(cors());
 app.use(express.json());
 //#endregion
