@@ -15,6 +15,7 @@ dbconnect();
 
 
 const healthcheck = require('./routers/healthcheck.js');
+const swaggerRouter = require('./routers/swaggerRouter.js');
 const feedRouter = require('./routers/feedRouter.js');
 
 
@@ -23,6 +24,7 @@ app.use(express.json());
 
 
 app.use('/', healthcheck);
+app.use('/', swaggerRouter)
 app.use('/feed', feedRouter);
 
 
