@@ -1,3 +1,4 @@
+const Validations = require('../utils/validations.js');
 
 const conversionToModel = {
     data_To_feed(data){
@@ -10,6 +11,7 @@ const conversionToModel = {
             publisher: data.publisher
         }
 
+        Validations.isValidFeedModel(feed);
         return feed;
     }
 };
