@@ -36,6 +36,15 @@ const feedController = {
             res.status(500).send({ message: errorMsg });
         }
     },
+    async update(req, res){
+        try {
+            await _feedService.update(req.body.id, conversionToModel.data_To_feed(req.body.data));
+            res.status(202).send();
+        } catch (error) {
+            global.loggererror.error(error.message);
+            res.status(500).send({ message: errorMsg });
+        }
+    },
     async delete(req, res){
         try {
             await _feedService.delete(req.body.id);
