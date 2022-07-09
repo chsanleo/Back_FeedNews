@@ -19,6 +19,13 @@ const FeedService = {
             return await _feedRespository.getAll();
         } catch (error) { throw Error ('Get All Feed ' + error.message);}
     },
+    async update(_id, feed){
+        try {
+            Validations.isValidId(_id);
+            feed.updateAt = Date.now().toString();
+            return await _feedRespository.update(_id,feed);
+        } catch (error) { throw Error ('Update Feed ' + error.message);}
+    },
 };
 
 module.exports = FeedService;
