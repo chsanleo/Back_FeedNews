@@ -14,6 +14,11 @@ const FeedService = {
             return await _feedRespository.get(_id);
         } catch (error) { throw Error ('Get Feed ' + error.message); }
     },
+    async getAll() {
+        try {
+            return await _feedRespository.getAll();
+        } catch (error) { throw Error ('Get All Feed ' + error.message);}
+    },
 };
 
 module.exports = FeedService;
