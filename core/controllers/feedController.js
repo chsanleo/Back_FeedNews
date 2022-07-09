@@ -7,8 +7,8 @@ let errorMsg = 'Error, contact with the Administrator.';
 const feedController = {
     async create(req, res){
         try {
-            let feed = await _feedService.create(conversionToModel.data_To_feed(req.body.data));
-            res.status(201).send(conversionReturn.feed_To_return(feed));
+            await _feedService.create(conversionToModel.data_To_feed(req.body));
+            res.status(201).send();
         } catch(error) {
             global.loggererror.error(error.message);
             res.status(500).send({ message: errorMsg });
