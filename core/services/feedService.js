@@ -4,8 +4,8 @@ const Validations = require('../utils/validations.js');
 const FeedService = {
     async create(feed) {
         try {
-            feed.createAt = Date.now().toString();
-            return await _feedRespository.create(feed);
+            feed.origin = 'manual';
+            await _feedRespository.create(feed);
         } catch (error) { throw Error('Create Feed -- ' + error.message); }
     },
     async get(_id) {
@@ -22,14 +22,13 @@ const FeedService = {
     async update(_id, feed){
         try {
             Validations.isValidId(_id);
-            feed.updateAt = Date.now().toString();
-            return await _feedRespository.update(_id,feed);
+            await _feedRespository.update(_id,feed);
         } catch (error) { throw Error ('Update Feed ' + error.message);}
     },
     async delete(_id){
         try {
             Validations.isValidId(_id);
-            return await _feedRespository.delete(_id);
+            await _feedRespository.delete(_id);
         } catch (error) { throw Error ('Delete Feed ' + error.message);}
     }
 };
