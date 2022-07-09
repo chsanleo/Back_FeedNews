@@ -1,4 +1,4 @@
-const mongoose = require('moongoose');
+const mongoose = require('mongoose');
 
 const FeedSchema = mongoose.Schema({
     title: { type: String, required: true },
@@ -16,5 +16,5 @@ const FeedSchema = mongoose.Schema({
     deleteAt:{ type: String, required: false }
 });
 
-const FeedModel = mongoose.model('Feed', FeedSchema);
-module.exports = FeedModel;
+const feedModel = mongoose.model('Feed', FeedSchema);
+module.exports = feedModel;
