@@ -1,5 +1,6 @@
 const _feedRespository = require('../repositories/feedRepository.js');
 const Validations = require('../utils/validations.js');
+const Utils = require('../utils/utils.js');
 
 const FeedService = {
     async create(feed) {
@@ -18,6 +19,11 @@ const FeedService = {
         try {
             return await _feedRespository.getAll();
         } catch (error) { throw Error ('Get All Feed ' + error.message);}
+    },
+    async getAllToday(){
+        try {
+            return await _feedRespository.getAllByDate(Utils.dateNowSQL().split(' ', 1).toString());
+        } catch (error) { throw Error ('Get All Today ' + error.message);}
     },
     async update(_id, feed){
         try {
