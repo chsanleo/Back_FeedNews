@@ -14,6 +14,16 @@ const feedController = {
             res.status(500).send({ message: errorMsg });
         }
     },
+    async get(req, res){
+        try {
+            let feed = await _feedService.get(req.body.id);
+            if (feed) { res.status(202).send(conversionReturn.feed_To_return(feed)); }
+            res.status(202).send();
+        } catch (error) {
+            global.loggererror.error(error.message);
+            res.status(500).send({ message: errorMsg });
+        }
+    },
 };
 
 module.exports = feedController;
