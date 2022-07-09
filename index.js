@@ -18,9 +18,19 @@ const dbconnect = require('./core/database/config/mongoDb.js');
 dbconnect();
 //#endregion
 
+//#region Load Router
+const feedRouter = require('./routers/feedRouter.js');
+//#endregion
+
+
 //#region app
 app.use(cors());
 app.use(express.json());
+//#endregion
+
+
+//#region 
+app.use('/feed', feedRouter);
 //#endregion
 
 
