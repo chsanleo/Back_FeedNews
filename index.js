@@ -8,10 +8,15 @@ var log4js = require('log4js');
 
 app.use(log4js.connectLogger(log4js.getLogger("http"), { level: 'auto' }));
 //#endregion
+
+
+//#region Config
 require('dotenv').config();
 
 app.use(cors());
 app.use(express.json());
+//#endregion
+
 
 let port = process.env.PORT;
 app.listen(port, () => {
