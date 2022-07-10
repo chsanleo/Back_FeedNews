@@ -8,7 +8,8 @@ const conversionToModel = {
             image: data.image,
             imageLink: data.imageLink,
             source: data.source,
-            publisher: data.publisher
+            publisher: data.publisher,
+            writer: data.writer
         }
 
         Validations.isValidFeedModel(feed);

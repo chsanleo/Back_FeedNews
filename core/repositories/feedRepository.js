@@ -6,14 +6,15 @@ const feedRepository = {
         feed.createAt = Utils.dateNowSQL();
          await Feed.create(feed);
     }, 
-    async get (_id) { return await Feed.findOne({ _id: _id, deleteAt: null }); },
+    async get (_id) { return await Feed.findById(_id); },
+    async getByTitle(title) { return await Feed.findOne({ title: title });},
     async getAll () { return Feed.find({ deleteAt: null }); },
     async getAllByDate(date) { return Feed.find({ createAt: {$regex: date} });},
     async update (_id, feed) {
         feed.updateAt = Utils.dateNowSQL();
-        Feed.updateOne({ _id: _id }), feed, { upsert:true } ;
+        return await Feed.updateOne({ _id: _id }), feed, { upsert:true } ;
     },
-    async delete (_id) { Feed.updateOne({ _id: _id }), { deleteAt: Utils.dateNowSQL() }, { upsert:true } ;  }
+    async delete (_id) { return await Feed.deleteOne({ _id: _id });  }
 };
 
 module.exports = feedRepository;
