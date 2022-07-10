@@ -14,6 +14,7 @@ const dataScrapingService = {
             feedListMundo = await _dataScrapingMUNDOService.scrapData();
 
             Array.prototype.push.apply(feedList, await _dataScrapingPAISService.scrapData());
+            Array.prototype.push.apply(feedList, await _dataScrapingMUNDOService.scrapData());
 
             for (let feed of feedList) {
                 if(Utils.isEmpty(await _feedRespository.getByTitle(feed.title))) {
