@@ -9,12 +9,12 @@ const Validations = {
         let error = Utils.stringEmpty();
 
         let errorMsg = ' must be provided. ';
-        if (Utils.isNullOrEmpty(feed.title)) { error = 'Title '+ errorMsg;}
-        if (Utils.isNullOrEmpty(feed.body)) { error += ' Body '+ errorMsg; }
-        if (Utils.isNullOrEmpty(feed.source)) { error += ' Source '+ errorMsg; }
-        if (Utils.isNullOrEmpty(feed.publisher)) { error += ' Publisher '+ errorMsg; }
+        if (Utils.isEmptyString(feed.title)) { error = 'Title '+ errorMsg;}
+        if (Utils.isEmptyString(feed.body)) { error += ' Body '+ errorMsg; }
+        if (Utils.isEmptyString(feed.source)) { error += ' Source '+ errorMsg; }
+        if (Utils.isEmptyString(feed.publisher)) { error += ' Publisher '+ errorMsg; }
 
-        if(!Utils.isNullOrEmpty(error)){ throw Error(error); }
+        if(!Utils.isEmptyString(error)){ throw Error(error); }
     }
 };
 
