@@ -7,6 +7,7 @@ const conversionReturn = {
             imageLink: feed.imageLink,
             source: feed.source,
             publisher: feed.publisher,
+            writer: feed.writer,
             origin: feed.origin
         };
         return feedReturn;
