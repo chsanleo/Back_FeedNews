@@ -7,12 +7,11 @@ const Utils = require('../utils/utils.js');
 const url = "https://elpais.com";
 
 const dataScrapingPAISService = {
-
-    async scrapeData() {
+    async scrapData() {
         try {
             const { data } = await axios.get(url);
 
-            let feedList= [];
+            let feedList = [];
             let $ = cheerio.load(data);
             let listItems = $(".c-d");
         
