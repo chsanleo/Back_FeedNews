@@ -10,6 +10,7 @@ const FeedSchema = mongoose.Schema({
     imageLink: { type: String, required: false },
     source: { type: String, required: true },
     publisher: { type: String, required: true },
+    writer: { type: String, required: false },
     origin: { type: String, required: true },
     createAt: { type: String, required: true },
     updateAt: { type: String, required: false }
