@@ -13,7 +13,7 @@ const dataScrapingService = {
                 }
             }
             
-        } catch (error) { throw Error('Create Feed -- ' + error.message); }
+        } catch (error) { throw Error('ScrapingAndStorageAll Feed -- ' + error.message); }
     }
 };
 
