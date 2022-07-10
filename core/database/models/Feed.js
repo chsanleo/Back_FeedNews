@@ -12,8 +12,7 @@ const FeedSchema = mongoose.Schema({
     publisher: { type: String, required: true },
     origin: { type: String, required: true },
     createAt: { type: String, required: true },
-    updateAt: { type: String, required: false },
-    deleteAt:{ type: String, required: false }
+    updateAt: { type: String, required: false }
 });
 
 const feedModel = mongoose.model('Feed', FeedSchema);
