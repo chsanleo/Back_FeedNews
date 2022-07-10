@@ -14,7 +14,7 @@ const feedRepository = {
         feed.updateAt = Utils.dateNowSQL();
         Feed.updateOne({ _id: _id }), feed, { upsert:true } ;
     },
-    async delete (_id) { Feed.updateOne({ _id: _id }), { deleteAt: Utils.dateNowSQL() }, { upsert:true } ;  }
+    async delete (_id) { return await Feed.deleteOne({ _id: _id });  }
 };
 
 module.exports = feedRepository;
