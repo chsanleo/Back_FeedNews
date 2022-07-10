@@ -22,7 +22,7 @@ const FeedService = {
     },
     async getAllToday(){
         try {
-            return await _feedRespository.getAllByDate(Utils.dateNowSQL().split(' ', 1).toString());
+            return await _feedRespository.getAllByDate(Utils.dmySLQ());
         } catch (error) { throw Error ('Get All Today ' + error.message);}
     },
     async update(_id, feed){
