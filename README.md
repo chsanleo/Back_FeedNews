@@ -42,14 +42,15 @@ $ npm install
 
 **About the back**
 + Add swagger to all methods.
-+ Add testing.
++ Add testing to all methods.
 + Add more pages to scraping.
++ Add docker.
 
 **About the documentation**
 + Is supported in part by the swagger UI.
 
 **About features**
-+ Add theme to the model and return by it.
++ Add topic to the model and return by it.
 
 
 ## Test the application ⚙️
