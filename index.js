@@ -10,8 +10,8 @@ app.use(log4js.connectLogger(log4js.getLogger("http"), { level: 'auto' }));
 require('dotenv').config();
 
 
-const dbconnect = require('./core/database/config/mongoDb.js');
-dbconnect();
+const { connectDB } = require('./core/database/config/mongoDb.js');
+connectDB();
 
 
 const healthcheck = require('./routers/healthcheck.js');
@@ -32,6 +32,8 @@ app.use('/feed', feedAutoRouter);
 
 
 let port = process.env.PORT;
-app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log(`Running on port ${port}.`);
 });
+
+module.exports = { app, server };
