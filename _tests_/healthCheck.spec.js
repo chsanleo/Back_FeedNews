@@ -1,9 +1,10 @@
 const supertest = require('supertest');
 const { app, server } = require('../index.js');
+
 const request = supertest(app);
 
 describe('API helthCheck test', () => {
-  afterAll(() => {
+  afterAll(async () => {
     server.close();
   });
 

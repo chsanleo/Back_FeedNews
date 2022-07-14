@@ -1,15 +1,17 @@
 const supertest = require('supertest');
 const { app, server } = require('../index.js');
+
 const request = supertest(app);
 
-const { disconnectDB } = require('../core/database/config/mongoDb.js');
+const { connectDB, disconnectDB, clear } = require('../core/database/config/mongoDb.js');
 
 describe('API feedController test', () => {
-  beforeAll(() => {
-  });
+  beforeAll(async () => await connectDB());
 
-  afterAll(() => {
-    disconnectDB();
+  afterEach(async () => await clear());
+
+  afterAll(async () => {
+    await disconnectDB();
     server.close();
   });
 
