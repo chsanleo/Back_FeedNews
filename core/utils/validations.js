@@ -3,7 +3,7 @@ const Utils = require('./utils.js');
 
 const Validations = {
     isValidId(_id){
-        if (!mongoose.Types.ObjectId.isValid(_id)) { throw Error(); }
+        if(Utils.isEmpty(_id)) { throw Error (' _id is undefined or null. ');}
     },
     isValidFeedModel(feed){
         let error = Utils.stringEmpty();
