@@ -31,4 +31,11 @@ const disconnectDB = async () => {
     }
 };
 
-module.exports = { connectDB, disconnectDB }
+const clear = async () => {
+    const collections = mongoose.connection.collections;
+    for (const key in collections) {
+      await collections[key].deleteMany({});
+    }
+  };
+
+module.exports = { connectDB, disconnectDB, clear }
