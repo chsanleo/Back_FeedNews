@@ -37,6 +37,7 @@ $ npm install
 + Controller to return all the feed of today.
 + Swagger UI. 
 + Testing.
++ Docker.
 
 
 ### Roadmap 📋
@@ -45,7 +46,6 @@ $ npm install
 + Add swagger to all methods.
 + Add testing to all methods.
 + Add more pages to scraping.
-+ Add docker.
 
 **About the documentation**
 + Is supported in part by the swagger UI.
