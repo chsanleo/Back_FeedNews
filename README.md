@@ -36,6 +36,7 @@ $ npm install
 + Scraping of some newspapers.
 + Controller to return all the feed of today.
 + Swagger UI. 
++ Testing.
 
 
 ### Roadmap 📋
@@ -86,6 +87,7 @@ Use the browser of your choice and with the developer tools test.
 * [nodemon](https://www.npmjs.com/package/nodemon) - Auto Restart
 * [Swagger-jsdoc](https://www.npmjs.com/package/swagger-jsdoc) - API docs
 * [swagger-ui-express](https://www.npmjs.com/package/swagger-ui-express) - API docs
+* [valid-url](https://www.npmjs.com/package/valid-url) - Validate Url
 
 
 ## Contributors ✒️
