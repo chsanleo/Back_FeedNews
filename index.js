@@ -10,9 +10,10 @@ app.use(log4js.connectLogger(log4js.getLogger("http"), { level: 'auto' }));
 require('dotenv').config();
 
 
-const { connectDB } = require('./core/database/config/mongoDb.js');
-connectDB();
-
+if(process.env.NODE_ENV !== 'test'){
+    const { connectDB } = require('./core/database/config/mongoDb.js');
+    connectDB();
+}
 
 const healthcheck = require('./routers/healthcheck.js');
 const swaggerRouter = require('./routers/swaggerRouter.js');
