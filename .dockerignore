@@ -1,0 +1,14 @@
+npm-debug.log
+
+.env_sample
+
+.git
+.gitignore
+
+/node_modules
+/log
+
+/_test_
+*.spec.js
+
+*.md
