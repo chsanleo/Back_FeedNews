@@ -6,6 +6,7 @@ const FeedService = {
     async create(feed) {
         try {
             feed.origin = 'manual';
+            Validations.isValidLogicFeed(feed);
             await _feedRespository.create(feed);
         } catch (error) { throw Error('Create Feed -- ' + error.message); }
     },
@@ -28,6 +29,7 @@ const FeedService = {
     async update(_id, feed){
         try {
             Validations.isValidId(_id);
+            Validations.isValidLogicFeed(feed);
             await _feedRespository.update(_id,feed);
         } catch (error) { throw Error ('Update Feed ' + error.message);}
     },
