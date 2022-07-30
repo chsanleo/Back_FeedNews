@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 
 const logger = require('./config/log4js-config.js');
-var log4js = require('log4js');
+const log4js = require('log4js');
 app.use(log4js.connectLogger(log4js.getLogger("http"), { level: 'auto' }));
 
 
