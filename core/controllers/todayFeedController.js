@@ -1,10 +1,9 @@
 const _feedService = require('../services/feedService.js');
 const conversionReturn = require('../model/conversionToReturn.js');
-
-let errorMsg = 'Error, contact with the Administrator.';
+const messages = require('../utils/messages.js');
 
 const feedTodayController = {
-    async getAllToday(req, res){
+    async getAllToday(req, res) {
         try {
             let feedList = [];
             for (let feed of await _feedService.getAllToday()) {
@@ -13,7 +12,7 @@ const feedTodayController = {
             res.status(202).send(feedList);
         } catch (error) {
             global.loggererror.error(error.message);
-            res.status(500).send({ message: errorMsg });
+            res.status(500).send({ message: messages.genericError });
         }
     }
 };

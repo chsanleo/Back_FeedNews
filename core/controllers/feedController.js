@@ -1,8 +1,7 @@
 const _feedService = require('../services/feedService.js');
 const conversionToModel = require('../model/conversionToModel.js');
 const conversionReturn = require('../model/conversionToReturn.js');
-
-let errorMsg = 'Error, contact with the Administrator.';
+const messages = require('../utils/messages.js');
 
 const feedController = {
     async create(req, res){
@@ -11,7 +10,7 @@ const feedController = {
             res.status(201).send();
         } catch(error) {
             global.loggererror.error(error.message);
-            res.status(500).send({ message: errorMsg });
+            res.status(500).send({ message:  messages.genericError });
         }
     },
     async get(req, res){
@@ -21,7 +20,7 @@ const feedController = {
             res.status(202).send();
         } catch (error) {
             global.loggererror.error(error.message);
-            res.status(500).send({ message: errorMsg });
+            res.status(500).send({ message:  messages.genericError });
         }
     },
     async getAll(req, res){
@@ -33,7 +32,7 @@ const feedController = {
             res.status(202).send(feedList);
         } catch (error) {
             global.loggererror.error(error.message);
-            res.status(500).send({ message: errorMsg });
+            res.status(500).send({ message:  messages.genericError });
         }
     },
     async update(req, res){
@@ -42,7 +41,7 @@ const feedController = {
             res.status(202).send();
         } catch (error) {
             global.loggererror.error(error.message);
-            res.status(500).send({ message: errorMsg });
+            res.status(500).send({ message:  messages.genericError });
         }
     },
     async delete(req, res){
@@ -51,7 +50,7 @@ const feedController = {
             res.status(202).send();
         } catch (error) {
             global.loggererror.error(error.message);
-            res.status(500).send({ message: errorMsg });
+            res.status(500).send({ message:  messages.genericError });
         }
     }
 };
