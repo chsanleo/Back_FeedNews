@@ -10,8 +10,8 @@ app.use(log4js.connectLogger(log4js.getLogger("http"), { level: 'auto' }));
 require('dotenv').config();
 
 
-if(process.env.NODE_ENV !== 'test'){
-    const { connectDB } = require('./core/database/config/mongoDb.js');
+if(process.env.NODE_ENV !== 'test') {
+    let { connectDB } = require('./core/database/config/mongoDb.js');
     connectDB();
 }
 
