@@ -26,7 +26,7 @@ app.use(express.json());
 
 
 app.use('/', healthcheck);
-app.use('/', swaggerRouter)
+app.use('/', swaggerRouter);
 app.use('/feed', feedRouter);
 app.use('/feed', feedTodayRouter);
 app.use('/feed', feedAutoRouter);
